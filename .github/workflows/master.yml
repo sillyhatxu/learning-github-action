@@ -3,8 +3,8 @@ name: Go
 on:
   push:
     branches: [ master ]
-#  pull_request:
-#    branches: [ master ]
+  pull_request:
+    branches: [ master ]
 
 jobs:
 
@@ -13,24 +13,27 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-    - name: Set up Go 1.14.x
-      uses: actions/setup-go@v2
-      with:
-        go-version: ^1.14
-      id: go
+      - name: Set up Go 1.x
+        uses: actions/setup-go@v2
+        with:
+          go-version: ^1.14
+        id: go
 
-#    - name: Check out code into the Go module directory
-#      uses: actions/checkout@v2
-#    - name: Get dependencies
-#      run: go mod vendor
-    - name: test ls
-      run: ls
+      - name: Check out code into the Go module directory
+        uses: actions/checkout@v2
 
-    - name: test pwd
-      run: pwd
+      - name: Get dependencies
+        run: go mod vendor
+#      - name: Get dependencies
+#        run: |
+#          go get -v -t -d ./...
+#          if [ -f Gopkg.toml ]; then
+#              curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
+#              dep ensure
+#          fi
 
-    - name: Build
-      run: go build -v .
+      - name: Build
+        run: go build -v .
 
-    - name: Test
-      run: go test
+      - name: Test
+        run: go test -v .
