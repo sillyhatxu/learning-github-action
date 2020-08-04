@@ -28,7 +28,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      - name: Set up Go 1.14.x
+      - name: Set up Go 1.x
         uses: actions/setup-go@v2
         with:
           go-version: ^1.14
@@ -40,11 +40,12 @@ jobs:
       - name: Get dependencies
         run: go mod vendor
 
-      - name: Build
-        run: go build -v .
-
       - name: Test
         run: go test -v .
+
+# If it does not has the main function and doesn't need to build.
+#      - name: Build
+#        run: go build -v .
 ```
 
 2. 页面操作新增文件
