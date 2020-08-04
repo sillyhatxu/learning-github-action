@@ -87,7 +87,9 @@ jobs:
 ```yaml
 [![PkgGoDev](https://pkg.go.dev/badge/github.com/<OWNER>/<REPOSITORY>)](https://pkg.go.dev/github.com/<OWNER>/<REPOSITORY>)
 ```
+github.com/sillyhatxu/learning-github-actions/@latest
 
+https://proxy.golang.org/github.com/sillyhatxu/learning-github-actions/@v/v1.0.0.info
 
 ### 添加 build and test badge
 

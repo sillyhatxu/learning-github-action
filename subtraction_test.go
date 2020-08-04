@@ -1,4 +1,4 @@
-package main
+package learning_github_actions
 
 import (
 	"github.com/stretchr/testify/assert"
