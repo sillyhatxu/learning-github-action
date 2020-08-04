@@ -79,11 +79,46 @@ jobs:
 
 ### 添加 Go Reference
 
-需要release new version
+*需要创建License*
 
-> git tag -a v1.0.0
->
-> git push origin v1.0.1
+* page 1
+
+![](https://github.com/sillyhatxu/learning-github-actions/blob/master/asset/create-license-01)
+
+* page 2
+
+![](https://github.com/sillyhatxu/learning-github-actions/blob/master/asset/create-license-02)
+
+* page 3
+
+![](https://github.com/sillyhatxu/learning-github-actions/blob/master/asset/create-license-03)
+
+* page 4
+
+![](https://github.com/sillyhatxu/learning-github-actions/blob/master/asset/create-license-04)
+
+
+有时不会自动创建，官方给出两种解决方案。
+
+* 第一种：`不知名原因，只返回了json，但没有更新Go Reference Doc`
+
+> Making a request to proxy.golang.org for the module version, to any endpoint specified by the Module proxy protocol. 
+> For example: https://proxy.golang.org/example.com/my/module/@v/v1.0.0.info
+
+    curl https://proxy.golang.org/github.com/sillyhatxu/learning-github-actions/@latest
+    {"Version":"v1.0.0","Time":"2020-08-04T15:50:54Z"}
+    curl https://proxy.golang.org/github.com/sillyhatxu/learning-github-actions/@v/v1.0.0.info
+    {"Version":"v1.0.0","Time":"2020-08-04T15:50:54Z"}
+
+* 第二种：`需要使用另一个golang的项目，在go mod init 后，使用 go get 命令来发布`
+> Downloading the package via the go command. 
+> For example: GOPROXY=https://proxy.golang.org GO111MODULE=on 
+> go get example.com/my/module@v1.0.0
+    
+    create new project xxxxxx
+    go mod init xxxxxx
+    go get github.com/sillyhatxu/learning-github-actions/@v1.0.2
+
 ```yaml
 [![PkgGoDev](https://pkg.go.dev/badge/github.com/<OWNER>/<REPOSITORY>)](https://pkg.go.dev/github.com/<OWNER>/<REPOSITORY>)
 ```
