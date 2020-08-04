@@ -1,4 +1,4 @@
-module github.com/sillyhatxu/learning-github-action
+module github.com/sillyhatxu/learning-github-actions
 
 go 1.14
 
