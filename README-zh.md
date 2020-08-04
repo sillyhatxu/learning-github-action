@@ -45,9 +45,15 @@ jobs:
 
 2. 页面操作新增文件
 
+* page 1
+
 ![](https://github.com/sillyhatxu/learning-github-actions/blob/master/asset/page-add-workflows-01.png)
 
+* page 2
+
 ![](https://github.com/sillyhatxu/learning-github-actions/blob/master/asset/page-add-workflows-02.png)
+
+* page 3
 
 ![](https://github.com/sillyhatxu/learning-github-actions/blob/master/asset/page-add-workflows-03.png)
 
