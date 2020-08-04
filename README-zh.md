@@ -1,10 +1,14 @@
-# learning-github-action
+# learning-github-actions
 
-[![Build and Test](https://github.com/sillyhatxu/learning-github-action/workflows/Build%20and%20Test/badge.svg?branch=master&event=push)](https://github.com/sillyhatxu/learning-github-action/actions)
+[![Build and Test](https://github.com/sillyhatxu/learning-github-actions/workflows/Build%20and%20Test/badge.svg?branch=master&event=push)](https://github.com/sillyhatxu/learning-github-actions/actions)
 
 ## 新增workflows
 
-### 新增文件 `.github/workflows/master.yml`
+新增文件 `.github/workflows/master.yml`
+
+创建后，系统会在Actions中显示build
+
+1. 直接创建
 
 ```yaml
 name: Build and Test
@@ -39,7 +43,20 @@ jobs:
         run: go test -v .
 ```
 
-### 或者你也可以在页面操作
+2. 页面操作新增文件
+
+![](https://github.com/sillyhatxu/learning-github-actions/blob/master/asset/page-add-workflows-01.png)
+
+![](https://github.com/sillyhatxu/learning-github-actions/blob/master/asset/page-add-workflows-02.png)
+
+![](https://github.com/sillyhatxu/learning-github-actions/blob/master/asset/page-add-workflows-03.png)
 
 
 
+
+
+## 添加 badges
+
+### 添加 build and test badge
+
+![](https://github.com/sillyhatxu/learning-github-actions/blob/master/asset/workflow-name.png)
