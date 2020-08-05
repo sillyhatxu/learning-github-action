@@ -24,7 +24,7 @@ jobs:
         run: go mod vendor
 
       - name: Test token
-        run: echo ${{ secrets.HAHA_SECRET }}
+        run: echo "${{ secrets.HAHA_SECRET }}"
 
       - name: Test
         run: go test -v .
