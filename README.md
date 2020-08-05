@@ -83,19 +83,19 @@ jobs:
 
 * page 1
 
-![](https://github.com/sillyhatxu/learning-github-actions/blob/master/asset/create-license-01)
+![](https://github.com/sillyhatxu/learning-github-actions/blob/master/asset/create-license-01.png)
 
 * page 2
 
-![](https://github.com/sillyhatxu/learning-github-actions/blob/master/asset/create-license-02)
+![](https://github.com/sillyhatxu/learning-github-actions/blob/master/asset/create-license-02.png)
 
 * page 3
 
-![](https://github.com/sillyhatxu/learning-github-actions/blob/master/asset/create-license-03)
+![](https://github.com/sillyhatxu/learning-github-actions/blob/master/asset/create-license-03.png)
 
 * page 4
 
-![](https://github.com/sillyhatxu/learning-github-actions/blob/master/asset/create-license-04)
+![](https://github.com/sillyhatxu/learning-github-actions/blob/master/asset/create-license-04.png)
 
 > 有时不会自动创建，官方给出两种解决方案。
 
@@ -133,6 +133,69 @@ jobs:
 ### 5) 添加 coverage badge
 
 * 登陆 [codecov](https://codecov.io/)
-* 
+* Add new repository
+
+![](https://github.com/sillyhatxu/learning-github-actions/blob/master/asset/create-coverage-01.png)
+
+* Choose a new repository below
+
+![](https://github.com/sillyhatxu/learning-github-actions/blob/master/asset/create-coverage-02.png)
+
+* Copy token
+
+![](https://github.com/sillyhatxu/learning-github-actions/blob/master/asset/create-coverage-03.png)
+
+* 回到Github `project->Settings->Secrets->New Secret`
+
+![](https://github.com/sillyhatxu/learning-github-actions/blob/master/asset/create-coverage-04.png)
+
+* Create Secret `CODECOV_TOKEN=xxxxx` paste codecov token
+
+![](https://github.com/sillyhatxu/learning-github-actions/blob/master/asset/create-coverage-05.png)
+
+* Create workflows `coverage.yml`
+
+```yaml
+name: Coverage
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Set up Go 1.x
+        uses: actions/setup-go@v2
+        with:
+          go-version: ^1.14
+        id: go
+
+      - name: Check out code into the Go module directory
+        uses: actions/checkout@v2
+
+      - name: Get dependencies
+        run: go mod vendor
+
+      - name: Create coverage file
+        run: |
+          set -e
+          echo "" > coverage.txt
+
+          for d in $(go list ./... | grep -v vendor); do
+              go test -race -coverprofile=profile.out -covermode=atomic "$d"
+              if [ -f profile.out ]; then
+                  cat profile.out >> coverage.txt
+                  rm profile.out
+              fi
+          done
+
+      - name: Coverage
+        run: bash <(curl -s https://codecov.io/bash) -t ${{ secrets.CODECOV_TOKEN }}
+```
 
 ### 6) 添加 go report
