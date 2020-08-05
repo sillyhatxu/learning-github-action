@@ -5,6 +5,7 @@
 [![PkgGoDev](https://pkg.go.dev/badge/github.com/sillyhatxu/learning-github-actions)](https://pkg.go.dev/github.com/sillyhatxu/learning-github-actions)
 [![Build and Test](https://github.com/sillyhatxu/learning-github-actions/workflows/Build%20and%20Test/badge.svg?branch=master&event=push)](https://github.com/sillyhatxu/learning-github-actions/actions)
 [![codecov](https://codecov.io/gh/sillyhatxu/learning-github-actions/branch/master/graph/badge.svg)](https://codecov.io/gh/sillyhatxu/learning-github-actions)
+[![Release](https://img.shields.io/github/release/sillyhatxu/learning-github-actions.svg?style=flat-square)](https://github.com/sillyhatxu/learning-github-actions/releases)
 
 ## 1. 新增workflows
 
@@ -199,3 +200,10 @@ jobs:
 ```
 
 ### 6) 添加 go report
+
+
+### 6) 添加 release version
+
+```yaml
+[![Release](https://img.shields.io/github/release/<OWNER>/<REPOSITORY>.svg?style=flat-square)](https://github.com/<OWNER>/<REPOSITORY>/releases)
+```
