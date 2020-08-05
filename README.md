@@ -6,13 +6,13 @@
 [![Build and Test](https://github.com/sillyhatxu/learning-github-actions/workflows/Build%20and%20Test/badge.svg?branch=master&event=push)](https://github.com/sillyhatxu/learning-github-actions/actions)
 [![codecov](https://codecov.io/gh/sillyhatxu/learning-github-actions/branch/master/graph/badge.svg)](https://codecov.io/gh/sillyhatxu/learning-github-actions)
 
-## 新增workflows
+## 1. 新增workflows
 
 新增文件 `.github/workflows/master.yml`
 
 > 创建后，系统会在Actions中显示build
 
-1. 直接创建
+1) 直接创建
 
 ```yaml
 name: Build and Test
@@ -48,7 +48,7 @@ jobs:
 #        run: go build -v .
 ```
 
-2. 页面操作新增文件
+2) 页面操作新增文件
 
 * page 1
 
@@ -63,21 +63,21 @@ jobs:
 ![](https://github.com/sillyhatxu/learning-github-actions/blob/master/asset/page-add-workflows-03.png)
 
 
-## 添加 badges
+## 2. 添加 badges
 
-### 添加 Made with Go
+### 1) 添加 Made with Go
 
 ```yaml
 [![made-with-Go](https://img.shields.io/badge/Made%20with-Go-1f425f.svg)](http://golang.org)
 ```
 
-### 添加 Go Version
+### 2) 添加 Go Version
 
 ```yaml
 [![Go-Version](https://img.shields.io/github/go-mod/go-version/gomods/athens.svg)](https://github.com/<OWNER>/<REPOSITORY>)
 ```
 
-### 添加 Go Reference
+### 4) 添加 Go Reference
 
 *需要创建License*
 
@@ -97,8 +97,7 @@ jobs:
 
 ![](https://github.com/sillyhatxu/learning-github-actions/blob/master/asset/create-license-04)
 
-
-有时不会自动创建，官方给出两种解决方案。
+> 有时不会自动创建，官方给出两种解决方案。
 
 * 第一种：`不知名原因，只返回了json，但没有更新Go Reference Doc`
 
@@ -122,11 +121,8 @@ jobs:
 ```yaml
 [![PkgGoDev](https://pkg.go.dev/badge/github.com/<OWNER>/<REPOSITORY>)](https://pkg.go.dev/github.com/<OWNER>/<REPOSITORY>)
 ```
-github.com/sillyhatxu/learning-github-actions/@latest
 
-https://proxy.golang.org/github.com/sillyhatxu/learning-github-actions/@v/v1.0.0.info
-
-### 添加 build and test badge
+### 4) 添加 build and test badge
 
 ```yaml
 [![Build and Test](https://github.com/sillyhatxu/learning-github-actions/workflows/Build%20and%20Test/badge.svg?branch=master&event=push)](https://github.com/sillyhatxu/learning-github-actions/actions)
@@ -134,3 +130,9 @@ https://proxy.golang.org/github.com/sillyhatxu/learning-github-actions/@v/v1.0.0
 
 ![](https://github.com/sillyhatxu/learning-github-actions/blob/master/asset/workflow-name.png)
 
+### 5) 添加 coverage badge
+
+* 登陆 [codecov](https://codecov.io/)
+* 
+
+### 6) 添加 go report
