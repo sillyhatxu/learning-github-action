@@ -4,7 +4,9 @@
 [![Go-Version](https://img.shields.io/github/go-mod/go-version/gomods/athens.svg)](https://github.com/sillyhatxu/learning-github-actions)
 [![PkgGoDev](https://pkg.go.dev/badge/github.com/sillyhatxu/learning-github-actions)](https://pkg.go.dev/github.com/sillyhatxu/learning-github-actions)
 [![Build and Test](https://github.com/sillyhatxu/learning-github-actions/workflows/Build%20and%20Test/badge.svg?branch=master&event=push)](https://github.com/sillyhatxu/learning-github-actions/actions)
+[![Go Report Card](https://goreportcard.com/badge/github.com/sillyhatxu/learning-github-actions)](https://goreportcard.com/report/github.com/sillyhatxu/learning-github-actions)
 [![codecov](https://codecov.io/gh/sillyhatxu/learning-github-actions/branch/master/graph/badge.svg)](https://codecov.io/gh/sillyhatxu/learning-github-actions)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://choosealicense.com/licenses/mit/)
 [![Release](https://img.shields.io/github/release/sillyhatxu/learning-github-actions.svg?style=flat-square)](https://github.com/sillyhatxu/learning-github-actions/releases)
 
 ## 1. 新增workflows
@@ -201,9 +203,18 @@ jobs:
 
 ### 6) 添加 go report
 
+```yaml
+[![Go Report Card](https://goreportcard.com/badge/github.com/<OWNER>/<REPOSITORY>)](https://goreportcard.com/report/github.com/<OWNER>/<REPOSITORY>)
+```
 
-### 6) 添加 release version
+### 7) 添加 release version
 
 ```yaml
 [![Release](https://img.shields.io/github/release/<OWNER>/<REPOSITORY>.svg?style=flat-square)](https://github.com/<OWNER>/<REPOSITORY>/releases)
+```
+
+### 8) 添加 MIT License
+
+```yaml
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://choosealicense.com/licenses/mit/)
 ```
