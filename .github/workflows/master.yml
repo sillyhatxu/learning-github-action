@@ -23,9 +23,9 @@ jobs:
       - name: Get dependencies
         run: go mod vendor
 
-      - name: Test token
-        run: echo "${{ secrets.HAHA_SECRET }}"
-
+#      - name: Test token
+#        run: echo ${{ secrets.HAHA_SECRET }}
+#        run: echo ${{ secrets.CODECOV_TOKEN }}
       - name: Test
         run: go test -v .
 
